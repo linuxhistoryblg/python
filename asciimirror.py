@@ -10,6 +10,7 @@ num_cols=100
 font = ImageFont.truetype("fonts/DejaVuSansMono-Bold.ttf", size=10)
 bg_code=0
 num_chars = len(CHAR_LIST)
+print('PRESS q TO CLOSE THE OUTPUT WINDOW')
 while(cap.isOpened()):
     ret, image = cap.read()
     if ret==True:
