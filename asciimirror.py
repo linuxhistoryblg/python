@@ -46,7 +46,7 @@ while(cap.isOpened()):
         
             
         #############################
-        cv2.imshow("Look! You're in ass key",out_image)
+        cv2.imshow("Look! You're in ascii",out_image)
         
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
