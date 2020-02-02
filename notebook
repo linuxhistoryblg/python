@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+###
+# start, stop, and check status
+# of Jupyter notebook
+################################################################
+case ${1} in
+        start)
+                # start jupyter notebook on public ip port 8888
+                jupyter notebook --ip=0.0.0.0 --no-browser &
+                ;;
+        stop)
+                killall jupyter-notebook
+                ;;
+        status)
+                check=$(ps -ef | grep jupyter-notebook)
+                if [[ ${check} != *'python'* ]];then
+                        echo "Jupyter notebook is stopped"
+                        exit 0
+                else
+                        PID=$(echo ${check} | awk '{print $2}')
+                        echo "Jupiter is running on pid ${PID}"
+                fi
+                ;;
+        *)
+                echo "Jupyter Notebook Server Operations"
+                echo "Usage: jn {start|stop|status}"
+                exit 1
+esac
