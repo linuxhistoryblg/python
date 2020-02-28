@@ -9,7 +9,7 @@ except IndexError:
     directory = '/'
 
 def main(directory):
-    ''' Return disk usage statistics for given directory.'''
+    ''' Return disk usage statistics for given directory or '/' if no directory given as argument.'''
     usage = disk_usage(directory)
     total = usage.total / 1000000000
     used = usage.used / 1000000000
