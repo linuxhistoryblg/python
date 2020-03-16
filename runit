@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# tkinter implementation of gnome's Alt+F2 run box
 
 from tkinter import *
 from tkinter import ttk
