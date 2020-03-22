@@ -2,7 +2,6 @@
 '''Create a tk application with an entry widget.'''
 try:
     import Tkinter as tk
-    import tkFileDialog as filedialog
 except ImportError:
     import tkinter as tk
 
@@ -13,7 +12,7 @@ def print_name(arg):
     ent_name.insert(0,'Hello there, '+ name)
 
 window = tk.Tk()
-window.title('Ex2')
+window.title('Who are you?')
 ent_name = tk.Entry(width=40)
 ent_name.insert(0,'Enter your name and press <Return>')
 ent_name.pack()
