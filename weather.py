@@ -7,7 +7,7 @@ class Weather:
     def __init__(self, zipcode):
         self.zipcode = zipcode
         self.api_url = 'http://api.openweathermap.org/data/2.5/weather?'
-        self.api_key = 'f8bc480f429a85e53cd55484482ee194'
+        self.api_key = '' #Obtain api key from http://api.openweathermap.org
         self.call_url = self.api_url + "zip=" + zipcode + ",us&" + "&units=imperial&" + "appid=" + self.api_key
         try:
             self.api_req = requests.get(self.call_url)
