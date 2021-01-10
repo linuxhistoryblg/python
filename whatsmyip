@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# Scrape https://www.expressvpn.com/what-is-my-ip
+# For my external IP address
+# Dan 2021.01.09
+from requests import get
+from bs4 import BeautifulSoup as bs
+from sys import exit as exit
+
+# URL to Scrape
+url = 'https://www.expressvpn.com/what-is-my-ip'
+
+# Fetch HTML
+try:
+    page = get(url)
+except:
+    print(f'Unable to Reach {url}')
+    exit(1)
+
+# Check to see 200 was returned from GET
+if page.status_code != 200:
+    print(f'Unable to Reach {url}')
+    exit(1)
+
+# Init parser
+soup = bs(page.content, 'html.parser')
+
+# Print IP to stdout
+print(soup.find('p', class_='ip-address').get_text().strip())
